@@ -26,7 +26,6 @@ class BeerModel{
         val food_pairing: List<String>,
         val brewers_tips: String,
         val contributed_by: String
-
     )
 
     //Volume Data

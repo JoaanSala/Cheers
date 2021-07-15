@@ -17,19 +17,5 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.fragment_main, LoadingFragment()).commit()
     }
 
-    fun request(call: Call<MutableList<BeerModel.Beer>>, serviceGenerator: ApiService){
-        call.enqueue(object : Callback<MutableList<BeerModel.Beer>> {
-            override fun onResponse(
-                call: Call<MutableList<BeerModel.Beer>>, response: Response<MutableList<BeerModel.Beer>>
-            ) {
-                if(response.isSuccessful){
-                    Log.e("pppp", response.body().toString())
-                }
-            }
-            override fun onFailure(call: Call<MutableList<BeerModel.Beer>>, t: Throwable) {
-                t.printStackTrace()
-                Log.e("error", t.message.toString())
-            }
-        })
-    }
+
 }

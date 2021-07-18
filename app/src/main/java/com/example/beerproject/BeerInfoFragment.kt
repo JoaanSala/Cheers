@@ -69,10 +69,14 @@ class BeerInfoFragment : Fragment() {
         tagline_beer.text = intent.getStringExtra("tagline")
         firstbrewed_beer.text = intent.getStringExtra("first_brewed")
 
-        Glide.with(requireContext())
-            .load(intent.getStringExtra("image_url"))
-            .fitCenter()
-            .into(image_beer)
+        if(intent.getStringExtra("image_url") == null){
+            Glide.with(requireContext()).load(R.drawable.empty).fitCenter().into(image_beer)
+        }else{
+            Glide.with(requireContext())
+                .load(intent.getStringExtra("image_url"))
+                .fitCenter()
+                .into(image_beer)
+        }
 
         description.text = intent.getStringExtra("description")
 
@@ -95,9 +99,21 @@ class BeerInfoFragment : Fragment() {
             ingredientsFragment.show(requireActivity().supportFragmentManager, "beerDialog")
         })
 
-        foodpairing1.text = "-> "+intent.getStringExtra("food_pairing1")
-        foodpairing2.text = "-> "+intent.getStringExtra("food_pairing2")
-        foodpairing3.text = "-> "+intent.getStringExtra("food_pairing3")
+        if(intent.getStringExtra("food_pairing1") != null) {
+            foodpairing1.visibility = View.INVISIBLE
+        }else{
+            foodpairing1.text = "-> " + intent.getStringExtra("food_pairing1")
+        }
+        if(intent.getStringExtra("food_pairing2") == null){
+            foodpairing2.visibility = View.INVISIBLE
+        }else{
+            foodpairing2.text = "-> "+intent.getStringExtra("food_pairing2")
+        }
+        if(intent.getStringExtra("food_pairing3") == null) {
+            foodpairing3.visibility = View.INVISIBLE
+        }else{
+            foodpairing3.text = "-> " + intent.getStringExtra("food_pairing3")
+        }
 
         return viewOfLayout
     }

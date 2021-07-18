@@ -150,10 +150,16 @@ class BeerListFragment : Fragment(), BeerAdapter.OnItemClickListener{
         intent.putStringArrayListExtra("hops_names", hopsNames)
         intent.putStringArrayListExtra("hops_values", hopsValues)
 
-        intent.putExtra("food_pairing1", beer.food_pairing[0])
-        intent.putExtra("food_pairing2", beer.food_pairing[1])
-        intent.putExtra("food_pairing3", beer.food_pairing[2])
-
+        if(beer.food_pairing.size >= 1) {
+            intent.putExtra("food_pairing1", beer.food_pairing[0])
+        }
+        if(beer.food_pairing.size >= 2){
+            intent.putExtra("food_pairing2", beer.food_pairing[1])
+        }
+        if(beer.food_pairing.size >= 3){
+            intent.putExtra("food_pairing3", beer.food_pairing[2])
+        }
+        
         startActivity(intent)
     }
 

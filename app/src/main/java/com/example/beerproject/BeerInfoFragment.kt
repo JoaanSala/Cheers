@@ -99,7 +99,7 @@ class BeerInfoFragment : Fragment() {
             ingredientsFragment.show(requireActivity().supportFragmentManager, "beerDialog")
         })
 
-        if(intent.getStringExtra("food_pairing1") != null) {
+        if(intent.getStringExtra("food_pairing1") == null) {
             foodpairing1.visibility = View.INVISIBLE
         }else{
             foodpairing1.text = "-> " + intent.getStringExtra("food_pairing1")

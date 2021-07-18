@@ -1,21 +1,29 @@
 package com.example.beerproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.VerifiedInputEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.beerproject.API.ApiService
+import com.example.beerproject.API.ServiceGenerator
+import com.example.beerproject.Adapter.BeerAdapter
+import com.example.beerproject.Model.BeerModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
+import java.util.*
+import kotlin.collections.ArrayList
 
-class BeerListFragment : Fragment(){
+class BeerListFragment : Fragment(), BeerAdapter.OnItemClickListener{
 
     private lateinit var viewOfLayout: View
     private lateinit var recyclerView: RecyclerView
@@ -96,13 +104,57 @@ class BeerListFragment : Fragment(){
     private fun initRecyclerView(response: MutableList<BeerModel.Beer>) {
 
         recyclerView.setHasFixedSize(true)
-        adapter = BeerAdapter(response)
+        adapter = BeerAdapter(response, this)
 
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
 
     }
 
+    override fun onItemClick(beer: BeerModel.Beer, position: Int) {
+        val intent = Intent(context, BeerInfoActivity::class.java)
 
+        intent.putExtra("id", beer.id.toString())
+        intent.putExtra("name", beer.name)
+        intent.putExtra("tagline", beer.tagline)
+        intent.putExtra("first_brewed", beer.first_brewed)
+        intent.putExtra("description", beer.description)
+        intent.putExtra("image_url", beer.image_url)
+        intent.putExtra("abv", beer.abv.toString())
+        intent.putExtra("ibu", beer.ibu.toString())
+        intent.putExtra("target_fg", beer.target_fg.toString())
+        intent.putExtra("target_og", beer.target_og.toString())
+        intent.putExtra("ebc", beer.ebc.toString())
+        intent.putExtra("srm", beer.srm.toString())
+        intent.putExtra("ph", beer.ph.toString())
+        intent.putExtra("attenuation_level", beer.attenuation_level.toString())
+
+        val maltNames = arrayListOf<String>()
+        val maltValues = arrayListOf<String>()
+
+        for (i in beer.ingredients.malt.indices) {
+            maltNames.add(beer.ingredients.malt[i].name)
+            maltValues.add(beer.ingredients.malt[i].amount.value.toString() + " kg")
+        }
+
+        val hopsNames = arrayListOf<String>()
+        val hopsValues = arrayListOf<String>()
+
+        for (i in beer.ingredients.hops.indices) {
+            hopsNames.add(beer.ingredients.hops[i].name + " ("+beer.ingredients.hops[i].add + " "+beer.ingredients.hops[i].attribute+")")
+            hopsValues.add(beer.ingredients.hops[i].amount.value.toString() + " g")
+        }
+
+        intent.putStringArrayListExtra("malt_names", maltNames)
+        intent.putStringArrayListExtra("malt_values", maltValues)
+        intent.putStringArrayListExtra("hops_names", hopsNames)
+        intent.putStringArrayListExtra("hops_values", hopsValues)
+
+        intent.putExtra("food_pairing1", beer.food_pairing[0])
+        intent.putExtra("food_pairing2", beer.food_pairing[1])
+        intent.putExtra("food_pairing3", beer.food_pairing[2])
+
+        startActivity(intent)
+    }
 
 }

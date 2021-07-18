@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeerInfoFragment"
+    android:background="#fec652"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_weight="3.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/beerInfo_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PUNK IPA 2007 - 2010"
+            android:textSize="25dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="@font/moonrising_font"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="60dp"
+            android:paddingRight="2dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/beerInfo_tagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Modern Classic. Spiky. Tropical. Hoppy."
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/beerInfo_name"/>
+
+        <LinearLayout
+            android:id="@+id/linear_fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/beerInfo_tagline">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Brewed: "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:singleLine="true"/>
+
+            <TextView
+                android:id="@+id/beerInfo_firstBrewed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="04/2007"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/beerInfo_id"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="192"
+            android:textColor="#000000"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:background="@drawable/beerid_border"
+            android:layout_alignParentRight="true"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/beerinfo_background_rounded">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/beerInfo_image"
+                    android:layout_width="100dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/description_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DESCRIPTION"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:layout_marginRight="130dp"
+                    android:padding="10dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/beerInfo_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Our flagship beer that kick started the craft beer revolution. This is James and Martin's original take on an American IPA, subverted with punchy New Zealand hops. Layered with new world hops to create an all-out riot of grapefruit, pineapple and lychee before a spiky, mouth-puckering bitter finish."
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_marginRight="130dp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_below="@id/description_title"/>
+
+
+                <TextView
+                    android:id="@+id/characteristics_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/beerInfo_image"
+                    android:text="BEER CHARACTERISTICS"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:id="@+id/linear_fg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="25dp"
+                    android:layout_below="@id/characteristics_title">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Final Gravity: "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/beerInfo_fg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1010.0"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_og"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/linear_fg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Original Gravity: "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_og"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1056.0"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_abv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/linear_og">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alcohol by volume (ABV): "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/beerInfo_abv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="6.0"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_atenuation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="45dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/characteristics_title">
+
+                    <TextView
+                        android:id="@+id/atenuation_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Atenuation: "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_atenuation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="82.14"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_ebc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/linear_atenuation">
+
+                    <TextView
+                        android:id="@+id/ebc_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EBC: "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_ebc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="17.0"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_ph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/linear_ebc">
+
+                    <TextView
+                        android:id="@+id/ph_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PH: "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_ph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="4.4"
+                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:paddingLeft="5dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_Ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INGREDIENTS"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/beerbutton_border"
+                    android:layout_below="@id/linear_abv"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"/>
+
+                <TextView
+                    android:id="@+id/foodpairing_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/button_Ingredients"
+                    android:text="FOOD PAIRING"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/foodpairing_title"
+                    android:orientation="vertical"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/beerInfo_foodpairing1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-> Spicy carne asada with a pico de gallo sauce"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_foodpairing2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-> Shredded chicken tacos with a mango chilli lime salsa"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/beerInfo_foodpairing3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-> Cheesecake with a passion fruit swirl sauce"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</LinearLayout>

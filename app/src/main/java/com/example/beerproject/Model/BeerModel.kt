@@ -1,4 +1,6 @@
-package com.example.beerproject
+package com.example.beerproject.Model
+
+import java.io.Serializable
 
 class BeerModel{
 

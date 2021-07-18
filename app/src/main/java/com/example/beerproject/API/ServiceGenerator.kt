@@ -1,4 +1,4 @@
-package com.example.beerproject
+package com.example.beerproject.API
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

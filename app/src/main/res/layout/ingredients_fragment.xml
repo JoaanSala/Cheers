@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dialog.IngredientsFragment"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INGREDIENTS"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="27dp"
+            android:fontFamily="@font/moonrising_font"
+            android:background="@drawable/ingredients_title_underline"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="11dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/malt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MALT: "
+            android:textColor="#000000"
+            android:textStyle="bold|italic"
+            android:textSize="22dp"
+            android:fontFamily="@font/moonrising_font"
+            android:paddingLeft="50dp"
+            android:layout_marginBottom="11dp"
+            android:layout_below="@id/ingredients"/>
+
+        <LinearLayout
+            android:id="@+id/linear_malt"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_below="@id/malt_title">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="50dp"
+                android:background="@drawable/ingredientslist_separation">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/malt_title"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt1_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt1_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt1"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt2_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt2_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt2"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt3_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt3_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt3"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt4_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt4_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt4"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt5_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt5_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt5"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt6_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt6_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_malt7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_malt6"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/malt7_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Extra Pale"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/malt7_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4.5"
+                android:text="5,3 kg"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/ingr_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HOPS : "
+            android:textColor="#000000"
+            android:fontFamily="@font/moonrising_font"
+            android:textStyle="bold|italic"
+            android:textSize="22dp"
+            android:paddingLeft="50dp"
+            android:layout_below="@id/linear_malt"
+            android:layout_marginBottom="11dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/ingr_title"
+            android:layout_marginBottom="50dp">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="50dp"
+                android:background="@drawable/ingredientslist_separation">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/ingr_title"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops1_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops1_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops1"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops2_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops2_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops2"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops3_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops3_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops3"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops4_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops4_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:layout_below="@id/hops9_data"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops4"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops5_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops5_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops5"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops6_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops6_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops6"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops7_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops7_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops7"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops8_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops8_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops8"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops9_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops9_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_hops10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/linear_hops9"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/hops10_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-> Ahtanum (Start Bitter)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/hops10_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:text="25 grams"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_back_ingr"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close"
+            android:padding="10dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

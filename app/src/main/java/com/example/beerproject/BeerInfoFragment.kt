@@ -12,8 +12,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.beerproject.Dialog.IngredientsFragment
+import com.example.beerproject.Model.BeerModel
+import java.io.Serializable
 
-class BeerInfoFragment : Fragment() {
+class BeerInfoFragment() : Fragment() {
 
     private lateinit var viewOfLayout: View
 
@@ -36,8 +38,7 @@ class BeerInfoFragment : Fragment() {
     private lateinit var foodpairing1: TextView
     private lateinit var foodpairing2: TextView
     private lateinit var foodpairing3: TextView
-
-
+    
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         viewOfLayout = inflater.inflate(R.layout.beerinfo_fragment, container, false)
 
@@ -60,60 +61,52 @@ class BeerInfoFragment : Fragment() {
         foodpairing2 = viewOfLayout.findViewById(R.id.beerInfo_foodpairing2)
         foodpairing3 = viewOfLayout.findViewById(R.id.beerInfo_foodpairing3)
 
+        val beer = requireActivity().intent.extras!!.get("extra_beer") as BeerModel.Beer
 
-        val intent = requireActivity().intent
+        id_beer.text = beer.id.toString()
+        name_beer.text = beer.name
+        tagline_beer.text = beer.tagline
+        firstbrewed_beer.text = beer.first_brewed
 
-        id_beer.text = intent.getStringExtra("id")
-
-        name_beer.text = intent.getStringExtra("name")
-        tagline_beer.text = intent.getStringExtra("tagline")
-        firstbrewed_beer.text = intent.getStringExtra("first_brewed")
-
-        if(intent.getStringExtra("image_url") == null){
+        if(beer.image_url == null){
             Glide.with(requireContext()).load(R.drawable.empty).fitCenter().into(image_beer)
         }else{
-            Glide.with(requireContext())
-                .load(intent.getStringExtra("image_url"))
-                .fitCenter()
-                .into(image_beer)
+            Glide.with(requireContext()).load(beer.image_url).fitCenter().into(image_beer)
         }
 
-        description.text = intent.getStringExtra("description")
+        description.text = beer.description
 
-        final_gravity.text = intent.getStringExtra("target_fg")
-        original_gravity.text = intent.getStringExtra("target_og")
-        abv.text = intent.getStringExtra("abv")
-        atenuation.text = intent.getStringExtra("attenuation_level")
-        ebc.text = intent.getStringExtra("ebc")
-        ph.text = intent.getStringExtra("ph")
+        final_gravity.text = beer.target_fg.toString()
+        original_gravity.text = beer.target_og.toString()
+        abv.text = beer.abv.toString()
+        atenuation.text = beer.attenuation_level.toString()
+        ebc.text = beer.ebc.toString()
+        ph.text = beer.ph.toString()
+
+        if(beer.food_pairing.size > 0) {
+            foodpairing1.text = "-> " + beer.food_pairing[0]
+        }else{
+            foodpairing1.visibility = View.INVISIBLE
+        }
+        if(beer.food_pairing.size > 1){
+            foodpairing2.text = "-> "+beer.food_pairing[1]
+        }else{
+            foodpairing2.visibility = View.INVISIBLE
+        }
+        if(beer.food_pairing.size > 2) {
+            foodpairing3.text = "-> " + beer.food_pairing[2]
+        }else{
+            foodpairing3.visibility = View.INVISIBLE
+        }
 
         btn_ingredients.setOnClickListener(View.OnClickListener {
             val bundle = Bundle()
-            bundle.putStringArrayList("malt_names", intent.getStringArrayListExtra("malt_names"))
-            bundle.putStringArrayList("malt_values", intent.getStringArrayListExtra("malt_values"))
-            bundle.putStringArrayList("hops_names", intent.getStringArrayListExtra("hops_names"))
-            bundle.putStringArrayList("hops_values", intent.getStringArrayListExtra("hops_values"))
+            bundle.putSerializable("extra_beer", beer as Serializable)
 
             val ingredientsFragment = IngredientsFragment()
             ingredientsFragment.arguments = bundle
             ingredientsFragment.show(requireActivity().supportFragmentManager, "beerDialog")
         })
-
-        if(intent.getStringExtra("food_pairing1") == null) {
-            foodpairing1.visibility = View.INVISIBLE
-        }else{
-            foodpairing1.text = "-> " + intent.getStringExtra("food_pairing1")
-        }
-        if(intent.getStringExtra("food_pairing2") == null){
-            foodpairing2.visibility = View.INVISIBLE
-        }else{
-            foodpairing2.text = "-> "+intent.getStringExtra("food_pairing2")
-        }
-        if(intent.getStringExtra("food_pairing3") == null) {
-            foodpairing3.visibility = View.INVISIBLE
-        }else{
-            foodpairing3.text = "-> " + intent.getStringExtra("food_pairing3")
-        }
 
         return viewOfLayout
     }

@@ -2,7 +2,7 @@ package com.example.beerproject.Model
 
 import java.io.Serializable
 
-class BeerModel{
+class BeerModel: Serializable{
 
     data class Beer(
         val id: Int,
@@ -28,59 +28,61 @@ class BeerModel{
         val food_pairing: List<String>,
         val brewers_tips: String,
         val contributed_by: String
-    )
+    ):Serializable
 
     //Volume Data
     data class Volume(
         val value: Int,
         val unit: String
-    )
+    ):Serializable
     //Boil_Volume Data
     data class Boil_volume (
         val value: Int,
         val unit: String
-    )
+    ):Serializable
     //Method Data
     data class Method (
         var mash_temp: List<Mash_temp>,
         val fermentation: Fermentation
-    )
+    ):Serializable
     data class Mash_temp(
         val temp: TempMash,
         val duration: Int
-    )
+    ):Serializable
     data class TempMash(
         val value: Int,
         val unit: String
-    )
+    ):Serializable
     data class Fermentation(
         val temp: TempFerm,
         val twist: String
-    )
+    ):Serializable
     data class TempFerm(
         val value: Double,
         val unit: String
-    )
+    ):Serializable
 
     //Ingredients Data
     data class Ingredients(
         val malt: List<Malt>,
         val hops: List<Hops>,
         val yeast: String
-    )
+    ):Serializable
     data class Malt(
         val name: String,
         val amount: Amount,
-    )
+    ):Serializable
     data class Amount(
         val value: Double,
         val unit: String
-    )
+    ):Serializable
     data class Hops(
         val name: String,
         val amount: Amount,
         val add: String,
         val attribute: String
-    )
+    ):Serializable
+
+
 
 }

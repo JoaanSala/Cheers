@@ -79,7 +79,6 @@ class BeerListFragment : Fragment(), BeerAdapter.OnItemClickListener{
         }
 
         recyclerView = viewOfLayout.findViewById<RecyclerView>(R.id.beerRecyclerView)
-
         request(call, serviceGenerator)
 
         return viewOfLayout
@@ -105,61 +104,15 @@ class BeerListFragment : Fragment(), BeerAdapter.OnItemClickListener{
 
         recyclerView.setHasFixedSize(true)
         adapter = BeerAdapter(response, this)
-
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
 
     }
 
-    override fun onItemClick(beer: BeerModel.Beer, position: Int) {
-        val intent = Intent(context, BeerInfoActivity::class.java)
-
-        intent.putExtra("id", beer.id.toString())
-        intent.putExtra("name", beer.name)
-        intent.putExtra("tagline", beer.tagline)
-        intent.putExtra("first_brewed", beer.first_brewed)
-        intent.putExtra("description", beer.description)
-        intent.putExtra("image_url", beer.image_url)
-        intent.putExtra("abv", beer.abv.toString())
-        intent.putExtra("ibu", beer.ibu.toString())
-        intent.putExtra("target_fg", beer.target_fg.toString())
-        intent.putExtra("target_og", beer.target_og.toString())
-        intent.putExtra("ebc", beer.ebc.toString())
-        intent.putExtra("srm", beer.srm.toString())
-        intent.putExtra("ph", beer.ph.toString())
-        intent.putExtra("attenuation_level", beer.attenuation_level.toString())
-
-        val maltNames = arrayListOf<String>()
-        val maltValues = arrayListOf<String>()
-
-        for (i in beer.ingredients.malt.indices) {
-            maltNames.add(beer.ingredients.malt[i].name)
-            maltValues.add(beer.ingredients.malt[i].amount.value.toString() + " kg")
-        }
-
-        val hopsNames = arrayListOf<String>()
-        val hopsValues = arrayListOf<String>()
-
-        for (i in beer.ingredients.hops.indices) {
-            hopsNames.add(beer.ingredients.hops[i].name + " ("+beer.ingredients.hops[i].add + " "+beer.ingredients.hops[i].attribute+")")
-            hopsValues.add(beer.ingredients.hops[i].amount.value.toString() + " g")
-        }
-
-        intent.putStringArrayListExtra("malt_names", maltNames)
-        intent.putStringArrayListExtra("malt_values", maltValues)
-        intent.putStringArrayListExtra("hops_names", hopsNames)
-        intent.putStringArrayListExtra("hops_values", hopsValues)
-
-        if(beer.food_pairing.size >= 1) {
-            intent.putExtra("food_pairing1", beer.food_pairing[0])
-        }
-        if(beer.food_pairing.size >= 2){
-            intent.putExtra("food_pairing2", beer.food_pairing[1])
-        }
-        if(beer.food_pairing.size >= 3){
-            intent.putExtra("food_pairing3", beer.food_pairing[2])
-        }
-        
+    override fun onItemClick(beer: BeerModel.Beer, position: Int)
+    {
+        val intent = Intent(context, BeerInfoActivity()::class.java)
+        intent.putExtra("extra_beer", beer as Serializable)
         startActivity(intent)
     }
 
